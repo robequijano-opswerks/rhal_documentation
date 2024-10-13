@@ -1,0 +1,3 @@
+![Image title](https://i.ibb.co/NFKnnhv/462540541-1428153228572415-2494510043189324750-n.png){ width="800" }
+
+This diagram outlines an iterative process for building and deploying a web application using CI/CD. It begins with the Start phase, where planning, meetings, and requirements are finalized. The Set Up phase focuses on preparing prerequisites and learning necessary technologies. Next, the Create phase involves designing the web app and configuring the CI/CD build steps. The Build phase compiles, tests, and prepares the app for deployment. In the Testing phase, unit testing is conducted to ensure code quality before deployment. Finally, the Deploy phase rolls out the latest version of the app to the live environment

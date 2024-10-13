@@ -1,0 +1,3 @@
+![Image title](https://i.ibb.co/yQd7Dqg/462555434-1075664396787044-1174113531972213167-n.png){ width="800" }
+
+This CI/CD architecture uses GitHub, TeamCity, and automated deployment to streamline the development and deployment of a web app. Developers push changes to the dev branch, which are then reviewed and merged into the main branch. TeamCity will then do a build process, running a series of build steps to ensure functionality of the project. Once successful, the application will be deployed and exposed via load balancer for users to access.
