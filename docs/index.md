@@ -1,4 +1,4 @@
-# Team R.H.A.L Documentation
+# Introduction
 
 ## Project Overview
 

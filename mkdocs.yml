@@ -26,6 +26,13 @@ theme:
       primary: grey
       accent: lime
 
+nav:
+  - Introduction: index.md
+  - Project Requirements: requirements.md
+  - Limitations: Limitations.md
+  - Diagrams: Architecture.md
+  - Solutions: Solutions.md
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
