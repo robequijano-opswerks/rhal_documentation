@@ -66,9 +66,9 @@ current-context: lke238244-ctx
 <br>
 ---
 
-# Set Up TeamCity
+## Set Up TeamCity
 
-## A. Set Up Your SSH Key
+## A.1 Set Up Your SSH Key
 
 1. Navigate to the **Root Project** under the **Administration** tab.
 2. Select **SSH Key** from the menu.
@@ -78,6 +78,14 @@ current-context: lke238244-ctx
 4. Click **Generate** to create the key.
 5. Copy the **Public Key** and add it to your Git repository's SSH configuration.
 
+## A.2 Set up your Build Features
+
+1. Navigate to the **Build Features** under the **Adminitration** tab
+2. Click **++ Add build feature**
+3. Choose **Docker Support**
+4. Add your credentials
+5. Click **Save**
+
 ## B. Creating a New Project
 
 1. Set up your project by providing the repository URL.
@@ -85,6 +93,12 @@ current-context: lke238244-ctx
 3. Choose the SSH key you recently generated.
 4. Click **Proceed** to continue with the project setup.
 
+## B0.5 Configure your VCS
+1. Go to edit configuration under your project
+2. Click Version Control Settings
+3. Edit your VCS roots
+4. Replace the default branch and branch specification to your specified branch name
+5. Save
 
 ## B1. Create First Dev Build Configuration
 
@@ -130,5 +144,51 @@ current-context: lke238244-ctx
     kubectl apply -f ./utils/deployments/deployment-dev.yaml
     kubectl set image deployment/web-app-dev web-app-container=eywrld839/webapp:%build.number% -n dev
     kubectl set image deployment/web-app-canary web-app-container=eywrld839/webapp:%build.number% -n prod
+    ```
+- Click **Save**.
+
+## C1. Create Second Prod Build Configuration
+
+### C1.1 Modify Default Branch and Branch Specification
+- Set the default branch and branch specification to the head of the `prod` branch.
+- Click **Proceed**.
+
+### C1.2 Add 1st Build Step - Test
+- **Name**: `Test`
+- **Runner Type**: Select **Python**.
+- **Command**: `Pytest`
+- **Environment Tool**: Choose **Venv**.
+- **Dependencies**: Add your `requirements.txt` file.
+- Click **Save**.
+
+### C1.3 Add 2nd Build Step - Build
+- **Name**: `Build`
+- **Runner Type**: Select **Command Line**.
+- **Custom Script**:
+    ```bash
+    docker buildx build --no-cache --platform=linux/amd64 -t eywrld839/webapp:latest -t eywrld839/webapp:%build.number% -f ./utils/Docker/Dockerfile .
+    ```
+- Click **Save**.
+
+### C1.4 Add 3rd Build Step - Docker Push
+- **Name**: `Docker Push`
+- **Runner Type**: Select **Docker**.
+- **Docker Command**: Pick **Push**.
+- **Image Name:Tag**:
+    ```bash
+    eywrld839/webapp:latest
+    eywrld839/webapp:%build.number%
+    ```
+- Click **Save**.
+
+### C1.5 Add 4th Build Step - Deploy
+- **Name**: `Deploy`
+- **Runner Type**: Select **Command Line**.
+- **Custom Script**:
+    ```bash
+    export $(grep -v '^#' .env | xargs)
+    sed -i '' "s/PLACEHOLDER_COLOR/$COLOR/g" ./utils/deployments/deployment-prod.yaml
+    kubectl apply -f ./utils/deployments/deployment-prod.yaml
+    kubectl set image deployment/web-app-prod web-app-container=eywrld839/webapp:%build.number% -n prod
     ```
 - Click **Save**.
