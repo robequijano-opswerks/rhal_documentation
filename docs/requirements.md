@@ -1,6 +1,6 @@
 # Project Requirements
 
-## The following key tasks are necessary for the successful deployment of the web application using TeamCity:
+The following key tasks are necessary for the successful deployment of the web application using TeamCity:
 
 ### Web App Deployment
 
