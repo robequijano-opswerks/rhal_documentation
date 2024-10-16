@@ -6,7 +6,7 @@
     - Git branch protection cannot be enforced due to restrictions on the private repository.
     - Only color names must be input in the environment variable; hex codes and empty values are not allowed.
 
-## Using TeamCity, the developers have set up a CI/CD system that handles the following:
+Using TeamCity, the developers have set up a CI/CD system that handles the following:
 
 ### A. Web App Deployment
 - The web application successfully displays a plain colored background when accessed using hex color codes.
