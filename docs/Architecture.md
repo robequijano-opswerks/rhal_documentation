@@ -1,4 +1,4 @@
-# Architecture
+## Architecture
 
 ![Image title](https://i.ibb.co/yQd7Dqg/462555434-1075664396787044-1174113531972213167-n.png){ width="800" }
 
@@ -9,7 +9,7 @@ This CI/CD architecture uses GitHub, TeamCity, and automated deployment to strea
 <br>
 
 
-# Workflow
+## Workflow
 
 ![Image title](https://i.ibb.co/NFKnnhv/462540541-1428153228572415-2494510043189324750-n.png){ width="800" }
 
