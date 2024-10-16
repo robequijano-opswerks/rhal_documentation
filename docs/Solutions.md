@@ -53,11 +53,11 @@ Using TeamCity, the developers have set up a CI/CD system that handles the follo
 
 ## Disaster Recovery Plan
 
-### A. CI/CD Failure
+## A. CI/CD Failure
 
 To test if automated unit testing is working, below are scenarios that break the code and solutions to fix them:
 
-#### Syntax Error or Logical Error in GIT
+### Syntax Error or Logical Error in GIT
 
 If the value of the `COLOR` variable in the `.env` file is incorrect, like:
 
@@ -162,7 +162,7 @@ Unmerged paths:
 
 both modified:   .env
 ```
-### TO FIX:
+### To Fix:
 
 1. Retrieve the latest changes from the remote repository without merging them into your current branch:
     ```bash
