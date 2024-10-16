@@ -29,7 +29,6 @@ theme:
 nav:
   - Introduction: index.md
   - Project Requirements: requirements.md
-  - Limitations: Limitations.md
   - Diagrams: Architecture.md
   - Solutions: Solutions.md
   - Runbooks: Runbooks.md
@@ -61,6 +60,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 
 plugins:
   - search
