@@ -1,0 +1,973 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Solutions/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Runbooks - Team RHAL TeamCity Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="lime" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prerequisite" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Team RHAL TeamCity Documentation" class="md-header__button md-logo" aria-label="Team RHAL TeamCity Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Team RHAL TeamCity Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Runbooks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="lime" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../requirements/" class="md-tabs__link">
+        
+  
+    
+  
+  Project Requirements
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Architecture/" class="md-tabs__link">
+        
+  
+    
+  
+  Diagrams
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Solutions/" class="md-tabs__link">
+        
+  
+    
+  
+  Solutions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Runbooks
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Team RHAL TeamCity Documentation" class="md-nav__button md-logo" aria-label="Team RHAL TeamCity Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Team RHAL TeamCity Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Solutions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solutions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Runbooks
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Runbooks
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-javajdk17-in-your-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Java/JDK17 in your terminal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-teamcity-on-premises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Teamcity On-Premises
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Teamcity On-Premises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#untar-the-file-given" class="md-nav__link">
+    <span class="md-ellipsis">
+      Untar the file given
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-teamcity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start TeamCity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-docker-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Docker Desktop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-kubectl-on-your-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up kubectl on your machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up kubectl on your machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-this-up-as-your-current-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set this up as your current context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-directory-and-paste-it-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a directory and paste it here
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-teamcity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Up TeamCity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a1-set-up-your-ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      A.1 Set Up Your SSH Key
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a2-set-up-your-build-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      A.2 Set up your Build Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-creating-a-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Creating a New Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b05-configure-your-vcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      B0.5 Configure your VCS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b1-create-first-dev-build-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1. Create First Dev Build Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B1. Create First Dev Build Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b11-modify-default-branch-and-branch-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1.1 Modify Default Branch and Branch Specification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b12-add-1st-build-step-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1.2 Add 1st Build Step - Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b13-add-2nd-build-step-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1.3 Add 2nd Build Step - Build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b14-add-3rd-build-step-docker-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1.4 Add 3rd Build Step - Docker Push
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b15-add-4th-build-step-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1.5 Add 4th Build Step - Deploy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c1-create-second-prod-build-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      C1. Create Second Prod Build Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C1. Create Second Prod Build Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c11-modify-default-branch-and-branch-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      C1.1 Modify Default Branch and Branch Specification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c12-add-1st-build-step-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      C1.2 Add 1st Build Step - Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c13-add-2nd-build-step-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      C1.3 Add 2nd Build Step - Build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c14-add-3rd-build-step-docker-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      C1.4 Add 3rd Build Step - Docker Push
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c15-add-4th-build-step-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      C1.5 Add 4th Build Step - Deploy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="prerequisite">Prerequisite</h1>
+<h2 id="install-javajdk17-in-your-terminal">Install Java/JDK17 in your terminal</h2>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>brew install openjdk@17
+</span></code></pre></div>
+<br></p>
+<h2 id="install-teamcity-on-premises">Install Teamcity On-Premises</h2>
+<p><a href="https://www.jetbrains.com/teamcity/download/?shownFormKey=professional#section=server">Download TeamCity Here</a></p>
+<h3 id="untar-the-file-given">Untar the file given</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tar xzf TeamCity-2024.07.3.tar.gz
+</span></code></pre></div>
+<h3 id="start-teamcity">Start TeamCity</h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./Teamcity/bin/runAll.sh start
+</span></code></pre></div>
+<br></p>
+<h2 id="install-docker-desktop">Install Docker Desktop</h2>
+<p><a href="https://docs.docker.com/desktop/install/mac-install/">Download Docker Here</a></p>
+<p>Configure it with your own created account</p>
+<p><br></p>
+<h2 id="set-up-kubectl-on-your-machine">Set up kubectl on your machine</h2>
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/">Download kubectl Here</a></p>
+<h3 id="set-this-up-as-your-current-context">Set this up as your current context</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Config</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">preferences</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">clusters</span><span class="p">:</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cluster</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">certificate-authority-data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJTnNiVnZVd2o1WFF3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRFd01ETXdOalV5TkRaYUZ3MHpOREV3TURFd05qVTNORFphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUMvQWs2RHdLaW03dDI2ZWlZa3hTNGZUKys5czVLTmsrRE1EVFBmU0o4TXNZbnEwb21sNEloMHk0NC8KZGlXVmhHdE9QVFdiUFhOL1VGWW1LZ0JJVkN3K2V6MWx5MEsyRXljVlpyQ0NVS0w2VDNaSzNBTVpybTRsK1YySQpXUmg5UThlUVJVR0FMaElrNWxKczgrdWZZc1lUcjRScEEwUFlUWFpNcldvd1cxY0JKdXVRVTIxU2NIY2JjMFNGCld5Rkd1bzBsYUFZOHVFc1huSTVucld5K05JZ08vWVU5L2RTVzdMc0hsZXJEQzRMa09NaExaMkJLNVVtQjQydVkKMVB5UVdNTVd0RkxlV1F4SGNTNzN6MU9YN2V2VmF6TEorWG1sSi9CQUhjUjFWdkE1QndFaVVRcTQxZWV0SFBDTwowcnhZRmlUaUNBODVRY0ZsVkpwN0R0L1kxVlpWQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJRblNJMFZWTkRoSndoOUQwR0FrZjYwQ1p2cit6QVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQVpzbnlzcDlncApSaGUxTzRnUGt1T2ZWWkExUEw4dEkybERPWmNnRjk1UnFZOFZ0Z2x2MXBMSEVzQnlSZ2tvbTBmM003WEJ1VU1jClBsZnpNN2dyaVF6c0FIUUxLTFpJb2dFMVFwcFFVRWdzQ1FZdUU3QXV1enorRG9aK0dUcXNYYVRVanRENHhqTDEKRm1MWW5iY3NkM1NTcTh3WDlKMkVSeVJ3dXFUVEZDNnVEYzNiVitwQ09IZGV0TXZiL1hRYzN0cTlrbUZub0ZCLwppUFJIaGpnQzViUWNYYk92ZHFsTnd6c202UGlnS3hXUFFkUTZ0NDc3ZkdjYzQxZWFFdWZZZ1h1dnVxSzdGeWxvCkxDWHZ2QWNGaEphUURjY3R2dUZ5Z001WGQwbGdTQzNsZ2crdGFxeXJWc2JNKzZUYkxvOHNxNCtaay8yWWpzT0EKRG1MeGNFLzVrWSthCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://9c9ac1f7-1d29-46f9-81a5-364913e1d417.ap-south-1.linodelke.net:443</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lke238244</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nt">users</span><span class="p">:</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lke238244-admin</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">user</span><span class="p">:</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="nt">as-user-extra</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eyJhbGciOiJSUzI1NiIsImtpZCI6InNlejVlMFJUNWw3U1FBYTlpS0xCWVFRYS1SZ1M0QWgzdWo2aUJVNXdDSXMifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJsa2UtYWRtaW4tdG9rZW4tY2hxcXYiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoibGtlLWFkbWluIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiZWMyMmNiNzgtYTc4Zi00OGZlLWFhOTktZmE2MmZmMDU0ZWEyIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmxrZS1hZG1pbiJ9.J8gij2fPqHkC7rtkDVjsv-JxD_vSGyEPuo1lblMuVN_g_4H40MtHGFpb6FpTty6BJzgDy2BiI78VT0_Kfvk7sZ31wEvrNrxPg--sMdxvRutwz0Y-FF6FG51c3Q3JiltGYMeB3sgTPSYyXinHqkVUa-HSfjyeQ_j1jT-8utqed1Yrl-O74AzAqJVw-n_41lntJ9ENDEsmtzh1goyQlsPbrClYAHDJFxCqx3Z5Euey1RokGZOaqr-9GL7giatsLuzPl-ghaF0RMVu3FkRbQ2fVNHVhB5Pohdsopjg6yGKxCkftPla_s0xBXVyFUkuHWrG2gTPpugxZTcBGq9P56mUyFQ</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nt">contexts</span><span class="p">:</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">context</span><span class="p">:</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lke238244</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lke238244-admin</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lke238244-ctx</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="nt">current-context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lke238244-ctx</span>
+</span></code></pre></div>
+<h3 id="create-a-directory-and-paste-it-here">Create a directory and paste it here</h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;HomeDir&gt;/.kube/config
+</span></code></pre></div>
+<br></p>
+<hr />
+<h2 id="set-up-teamcity">Set Up TeamCity</h2>
+<h2 id="a1-set-up-your-ssh-key">A.1 Set Up Your SSH Key</h2>
+<ol>
+<li>Navigate to the <strong>Root Project</strong> under the <strong>Administration</strong> tab.</li>
+<li>Select <strong>SSH Key</strong> from the menu.</li>
+<li>Click <strong>Generate SSH Key</strong> and follow the steps below:<ul>
+<li><strong>Pick Type</strong>: Select <code>RSA</code> as the key type.</li>
+<li><strong>Input Name</strong>: Enter your preferred name for the key.</li>
+</ul>
+</li>
+<li>Click <strong>Generate</strong> to create the key.</li>
+<li>Copy the <strong>Public Key</strong> and add it to your Git repository's SSH configuration.</li>
+</ol>
+<h2 id="a2-set-up-your-build-features">A.2 Set up your Build Features</h2>
+<ol>
+<li>Navigate to the <strong>Build Features</strong> under the <strong>Adminitration</strong> tab</li>
+<li>Click <strong>++ Add build feature</strong></li>
+<li>Choose <strong>Docker Support</strong></li>
+<li>Add your credentials</li>
+<li>Click <strong>Save</strong></li>
+</ol>
+<h2 id="b-creating-a-new-project">B. Creating a New Project</h2>
+<ol>
+<li>Set up your project by providing the repository URL.</li>
+<li>For <strong>Authentication</strong>, select <strong>SSH Key</strong>.</li>
+<li>Choose the SSH key you recently generated.</li>
+<li>Click <strong>Proceed</strong> to continue with the project setup.</li>
+</ol>
+<h2 id="b05-configure-your-vcs">B0.5 Configure your VCS</h2>
+<ol>
+<li>Go to edit configuration under your project</li>
+<li>Click Version Control Settings</li>
+<li>Edit your VCS roots</li>
+<li>Replace the default branch and branch specification to your specified branch name</li>
+<li>Save</li>
+</ol>
+<h2 id="b1-create-first-dev-build-configuration">B1. Create First Dev Build Configuration</h2>
+<h3 id="b11-modify-default-branch-and-branch-specification">B1.1 Modify Default Branch and Branch Specification</h3>
+<ul>
+<li>Set the default branch and branch specification to the head of the <code>dev</code> branch.</li>
+<li>Click <strong>Proceed</strong>.</li>
+</ul>
+<h3 id="b12-add-1st-build-step-test">B1.2 Add 1st Build Step - Test</h3>
+<ul>
+<li><strong>Name</strong>: <code>Test</code></li>
+<li><strong>Runner Type</strong>: Select <strong>Python</strong>.</li>
+<li><strong>Command</strong>: <code>Pytest</code></li>
+<li><strong>Environment Tool</strong>: Choose <strong>Venv</strong>.</li>
+<li><strong>Dependencies</strong>: Add your <code>requirements.txt</code> file.</li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<h3 id="b13-add-2nd-build-step-build">B1.3 Add 2nd Build Step - Build</h3>
+<ul>
+<li><strong>Name</strong>: <code>Build</code></li>
+<li><strong>Runner Type</strong>: Select <strong>Command Line</strong>.</li>
+<li><strong>Custom Script</strong>:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>buildx<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>--platform<span class="o">=</span>linux/amd64<span class="w"> </span>-t<span class="w"> </span>eywrld839/webapp:dev<span class="w"> </span>-t<span class="w"> </span>eywrld839/webapp:%build.number%<span class="w"> </span>-f<span class="w"> </span>./utils/Docker/Dockerfile<span class="w"> </span>.
+</span></code></pre></div></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<h3 id="b14-add-3rd-build-step-docker-push">B1.4 Add 3rd Build Step - Docker Push</h3>
+<ul>
+<li><strong>Name</strong>: <code>Docker Push</code></li>
+<li><strong>Runner Type</strong>: Select <strong>Docker</strong>.</li>
+<li><strong>Docker Command</strong>: Pick <strong>Push</strong>.</li>
+<li><strong>Image Name:Tag</strong>:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>eywrld839/webapp:dev
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>eywrld839/webapp:%build.number%
+</span></code></pre></div></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<h3 id="b15-add-4th-build-step-deploy">B1.5 Add 4th Build Step - Deploy</h3>
+<ul>
+<li><strong>Name</strong>: <code>Deploy</code></li>
+<li><strong>Runner Type</strong>: Select <strong>Command Line</strong>.</li>
+<li><strong>Custom Script</strong>:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span><span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;^#&#39;</span><span class="w"> </span>.env<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="k">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="s2">&quot;s/PLACEHOLDER_COLOR/</span><span class="nv">$COLOR</span><span class="s2">/g&quot;</span><span class="w"> </span>./utils/deployments/deployment-dev.yaml
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>./utils/deployments/deployment-dev.yaml
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployment/web-app-dev<span class="w"> </span>web-app-container<span class="o">=</span>eywrld839/webapp:%build.number%<span class="w"> </span>-n<span class="w"> </span>dev
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployment/web-app-canary<span class="w"> </span>web-app-container<span class="o">=</span>eywrld839/webapp:%build.number%<span class="w"> </span>-n<span class="w"> </span>prod
+</span></code></pre></div></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<h2 id="c1-create-second-prod-build-configuration">C1. Create Second Prod Build Configuration</h2>
+<h3 id="c11-modify-default-branch-and-branch-specification">C1.1 Modify Default Branch and Branch Specification</h3>
+<ul>
+<li>Set the default branch and branch specification to the head of the <code>prod</code> branch.</li>
+<li>Click <strong>Proceed</strong>.</li>
+</ul>
+<h3 id="c12-add-1st-build-step-test">C1.2 Add 1st Build Step - Test</h3>
+<ul>
+<li><strong>Name</strong>: <code>Test</code></li>
+<li><strong>Runner Type</strong>: Select <strong>Python</strong>.</li>
+<li><strong>Command</strong>: <code>Pytest</code></li>
+<li><strong>Environment Tool</strong>: Choose <strong>Venv</strong>.</li>
+<li><strong>Dependencies</strong>: Add your <code>requirements.txt</code> file.</li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<h3 id="c13-add-2nd-build-step-build">C1.3 Add 2nd Build Step - Build</h3>
+<ul>
+<li><strong>Name</strong>: <code>Build</code></li>
+<li><strong>Runner Type</strong>: Select <strong>Command Line</strong>.</li>
+<li><strong>Custom Script</strong>:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>buildx<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>--platform<span class="o">=</span>linux/amd64<span class="w"> </span>-t<span class="w"> </span>eywrld839/webapp:latest<span class="w"> </span>-t<span class="w"> </span>eywrld839/webapp:%build.number%<span class="w"> </span>-f<span class="w"> </span>./utils/Docker/Dockerfile<span class="w"> </span>.
+</span></code></pre></div></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<h3 id="c14-add-3rd-build-step-docker-push">C1.4 Add 3rd Build Step - Docker Push</h3>
+<ul>
+<li><strong>Name</strong>: <code>Docker Push</code></li>
+<li><strong>Runner Type</strong>: Select <strong>Docker</strong>.</li>
+<li><strong>Docker Command</strong>: Pick <strong>Push</strong>.</li>
+<li><strong>Image Name:Tag</strong>:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>eywrld839/webapp:latest
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>eywrld839/webapp:%build.number%
+</span></code></pre></div></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<h3 id="c15-add-4th-build-step-deploy">C1.5 Add 4th Build Step - Deploy</h3>
+<ul>
+<li><strong>Name</strong>: <code>Deploy</code></li>
+<li><strong>Runner Type</strong>: Select <strong>Command Line</strong>.</li>
+<li><strong>Custom Script</strong>:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">export</span><span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;^#&#39;</span><span class="w"> </span>.env<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="k">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="s2">&quot;s/PLACEHOLDER_COLOR/</span><span class="nv">$COLOR</span><span class="s2">/g&quot;</span><span class="w"> </span>./utils/deployments/deployment-prod.yaml
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>./utils/deployments/deployment-prod.yaml
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployment/web-app-prod<span class="w"> </span>web-app-container<span class="o">=</span>eywrld839/webapp:%build.number%<span class="w"> </span>-n<span class="w"> </span>prod
+</span></code></pre></div></li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/robequijano-opswerks/rhal_documentation.git"  target="_blank" rel="noopener">Team RHAL</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

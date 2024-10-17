@@ -1,0 +1,966 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Architecture/">
+      
+      
+        <link rel="next" href="../Runbooks/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Solutions - Team RHAL TeamCity Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="lime" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#solutions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Team RHAL TeamCity Documentation" class="md-header__button md-logo" aria-label="Team RHAL TeamCity Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Team RHAL TeamCity Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Solutions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="lime" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../requirements/" class="md-tabs__link">
+        
+  
+    
+  
+  Project Requirements
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Architecture/" class="md-tabs__link">
+        
+  
+    
+  
+  Diagrams
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Solutions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Runbooks/" class="md-tabs__link">
+        
+  
+    
+  
+  Runbooks
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Team RHAL TeamCity Documentation" class="md-nav__button md-logo" aria-label="Team RHAL TeamCity Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Team RHAL TeamCity Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Solutions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Solutions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-web-app-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Web App Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-version-control-managementcode-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Version Control Management/Code Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-teamcity-as-cicd-auto-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. TeamCity as CI/CD (Auto-Testing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      D. Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disaster-recovery-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disaster Recovery Plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-cicd-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. CI/CD Failure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. CI/CD Failure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax-error-or-logical-error-in-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax Error or Logical Error in GIT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Fix:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-breaking-config-change-in-teamcity" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Breaking Config Change in TeamCity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Breaking Config Change in TeamCity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disabled-a-build-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disabled a Build Step
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-fix_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Fix:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-merge-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Merge Conflicts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C. Merge Conflicts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-fix_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Fix:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-resolve-the-merge-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Resolve the Merge Conflict:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-merge-changes-from-dev-to-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Merge Changes from Dev to Main:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Runbooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runbooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="solutions">Solutions</h1>
+<div class="admonition warning">
+<p class="admonition-title">Limitations</p>
+<ul>
+<li>Direct pushes or commits to the main branch of the GitHub repository are not allowed. Only pull requests (PRs) are permitted, requiring review and approval before merging.</li>
+<li>Git branch protection cannot be enforced due to restrictions on the private repository.</li>
+<li>Only color names must be input in the environment variable; hex codes are not allowed.</li>
+</ul>
+</div>
+<p>Using TeamCity, the developers have set up a CI/CD system that handles the following:</p>
+<h3 id="a-web-app-deployment">A. Web App Deployment</h3>
+<ul>
+<li>The web application successfully displays a plain colored background when accessed using hex color codes.</li>
+<li>The web application is exposed using a load balancer and is accessible over the internet.</li>
+<li>The web application is built using Flask and compiled in TeamCity.</li>
+<li>The web application is deployed using a canary deployment strategy.</li>
+</ul>
+<h3 id="b-version-control-managementcode-management">B. Version Control Management/Code Management</h3>
+<ul>
+<li>
+<p>Using Git/GitHub to track the updates and changes of the project. It has two branches: <code>main</code> and <code>dev</code>.</p>
+</li>
+<li>
+<p>Branch protection was not enforced due to the repository being private. <strong>Solution:</strong> The developers were able to practice branch protection by cloning the repository to a public repository and then implemented the branch protection.</p>
+</li>
+<li>
+<p>All changes were submitted through Pull Requests and were approved before being merged.</p>
+</li>
+<li>
+<p>The GitHub repository served as the main storage for all data related to the project.</p>
+</li>
+</ul>
+<h3 id="c-teamcity-as-cicd-auto-testing">C. TeamCity as CI/CD (Auto-Testing)</h3>
+<ul>
+<li>Once developers made changes to the GitHub repository, TeamCity will automatically run unit tests and rebuild the project. This ensures that the changes made to the project will work well and won't continue upon failure.</li>
+</ul>
+<h3 id="d-deployment">D. Deployment</h3>
+<ul>
+<li>When all tests pass, TeamCity will now be able to automatically deploy the project to the live environment. The web application will now be accessible to the users.</li>
+</ul>
+<hr />
+<h2 id="tools">Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Pytest</code></td>
+<td>a tool to write and run tests.</td>
+</tr>
+<tr>
+<td><code>Flask</code></td>
+<td>a python web framework for building web applications and APIs.</td>
+</tr>
+<tr>
+<td><code>TeamCity</code></td>
+<td>a CI/CD server used for automating processes like building, testing, and deploying applications</td>
+</tr>
+<tr>
+<td><code>Github</code></td>
+<td>tool used for version control management and collaborative purposes</td>
+</tr>
+<tr>
+<td><code>Webcolor</code></td>
+<td>tool to covert color names to hex codes</td>
+</tr>
+<tr>
+<td><code>Werkzeug</code></td>
+<td>a component of Flask used as a toolkit for building web applications.</td>
+</tr>
+<tr>
+<td><code>Docker</code></td>
+<td>used to build, push and pull images. Also used for containerization of application</td>
+</tr>
+<tr>
+<td><code>Kubernetes</code></td>
+<td>used for automation of deployments, scaling, and management.</td>
+</tr>
+<tr>
+<td><code>Java/JDK17</code></td>
+<td>(Java Development Kit) that provides tools for developing and running Java applications.</td>
+</tr>
+<tr>
+<td><code>Homebrew</code></td>
+<td>open-source software package management system use for installation of softwares</td>
+</tr>
+<tr>
+<td><code>Python</code></td>
+<td>programming language used for web development</td>
+</tr>
+<tr>
+<td><code>Kubectl</code></td>
+<td>a command-line tool used to interact with Kubernetes.</td>
+</tr>
+<tr>
+<td><code>Pip</code></td>
+<td>Used for installing, upgrading, and manage Python  packages and libraries.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="disaster-recovery-plan">Disaster Recovery Plan</h2>
+<h2 id="a-cicd-failure">A. CI/CD Failure</h2>
+<p>To test if automated unit testing is working, below are scenarios that break the code and solutions to fix them:</p>
+<h3 id="syntax-error-or-logical-error-in-git">Syntax Error or Logical Error in GIT</h3>
+<p>If the value of the <code>COLOR</code> variable in the <code>.env</code> file is incorrect, like:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">COLOR</span><span class="o">=</span>Blueeee
+</span></code></pre></div>
+<p>It will result in a build failure in pytest; Shown below is the error message</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">================</span><span class="w"> </span>short<span class="w"> </span><span class="nb">test</span><span class="w"> </span>summary<span class="w"> </span><span class="nv">info</span><span class="w"> </span><span class="o">===================</span><span class="w"> </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>FAILED<span class="w"> </span>tests/test_main_server.py::test_background_color<span class="w"> </span>-<span class="w"> </span>ValueError:<span class="w"> </span><span class="s2">&quot;Blueeee&quot;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>defined<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>named<span class="w"> </span>color<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">css3</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">================</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>failed<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.35s<span class="w"> </span><span class="o">=========================</span>
+</span></code></pre></div>
+<h3 id="to-fix">To Fix:</h3>
+<p>Ensure that the value in the variable name is valid (a recognized CSS color name).</p>
+<ol>
+<li>
+<p>Open your <code>.env</code> file using the command:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>vi<span class="w"> </span>.env
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Change the value:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">COLOR</span><span class="o">=</span>&lt;validColorName&gt;
+</span></code></pre></div></p>
+</li>
+</ol>
+<p>Example:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">COLOR</span><span class="o">=</span>BLUE
+</span></code></pre></div></p>
+<p><br></p>
+<h2 id="b-breaking-config-change-in-teamcity">B. Breaking Config Change in TeamCity</h2>
+<h3 id="disabled-a-build-step">Disabled a Build Step</h3>
+<p>When a build step is in a disabled status, the build won't be successful and will result in an error.</p>
+<p>Example Error Message:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Step<span class="w"> </span><span class="m">3</span>/4:<span class="w"> </span>Push<span class="w"> </span><span class="o">(</span>Docker<span class="o">)</span><span class="w"> </span>&lt;<span class="w"> </span>1s
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Starting:<span class="w"> </span>/bin/sh<span class="w"> </span>-c<span class="w"> </span>docker<span class="w"> </span>push<span class="w"> </span>eywrld839/webapp:dev<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>push<span class="w"> </span>eywrld839/webapp:20<span class="w"> </span><span class="k">in</span><span class="w"> </span>directory:<span class="w"> </span>/Users/academy/Downloads/TeamCity/buildAgent/work/40d27028a6259cf2
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>The<span class="w"> </span>push<span class="w"> </span>refers<span class="w"> </span>to<span class="w"> </span>repository<span class="w"> </span><span class="o">[</span>docker.io/eywrld839/webapp<span class="o">]</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>tag<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist:<span class="w"> </span>eywrld839/webapp:dev
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Process<span class="w"> </span>exited<span class="w"> </span>with<span class="w"> </span>code<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Process<span class="w"> </span>exited<span class="w"> </span>with<span class="w"> </span>code<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>Step:<span class="w"> </span>Push<span class="w"> </span><span class="o">(</span>Docker<span class="o">))</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Removing<span class="w"> </span>pushed<span class="w"> </span>images/tags<span class="w"> </span>from<span class="w"> </span>build<span class="w"> </span>agent:<span class="w"> </span>eywrld839/webapp:dev<span class="w"> </span>eywrld839/webapp:20
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Step<span class="w"> </span>Push<span class="w"> </span><span class="o">(</span>Docker<span class="o">)</span><span class="w"> </span>failed
+</span></code></pre></div>
+<h3 id="to-fix_1">To Fix:</h3>
+<ol>
+<li>
+<p>Navigate to:<br />
+<strong>Projects</strong> &gt; <strong>(Project Name)</strong> &gt; <strong>Build Configuration</strong> &gt; <strong>Edit Configuration</strong> &gt; <strong>Build Steps</strong>.</p>
+</li>
+<li>
+<p>Click the dropdown button of the disabled build step, then select <strong>Enable Build Step</strong>.</p>
+</li>
+</ol>
+<p><br></p>
+<h2 id="c-merge-conflicts">C. Merge Conflicts</h2>
+<p>Merge conflicts occur whenever a file/data is manipulated or modified from two different branches or sets of changes.</p>
+<p>In the example below, we introduce a merge conflict error by changing the value within the <code>.env</code> file at the same time and on the same line.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">First POV</label><label for="__tabbed_1_2">Second POV</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>vi<span class="w"> </span>.env
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">COLOR</span><span class="o">=</span>White
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>vi<span class="w"> </span>.env
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">COLOR</span><span class="o">=</span>Yellow
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>After <strong>GIT PUSH</strong>, You will encounter git merge conflict since the same file was editted at the same time without pulling first</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Auto-merging<span class="w"> </span>.env
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>CONFLICT<span class="w"> </span><span class="o">(</span>content<span class="o">)</span>:<span class="w"> </span>Merge<span class="w"> </span>conflict<span class="w"> </span><span class="k">in</span><span class="w"> </span>.env
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Automatic<span class="w"> </span>merge<span class="w"> </span>failed<span class="p">;</span><span class="w"> </span>fix<span class="w"> </span>conflicts<span class="w"> </span>and<span class="w"> </span><span class="k">then</span><span class="w"> </span>commit<span class="w"> </span>the<span class="w"> </span>result.
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>academy@Academy16s-MacBook-Pro<span class="w"> </span>devwebapp<span class="w"> </span>%<span class="w"> </span>git<span class="w"> </span>status
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>On<span class="w"> </span>branch<span class="w"> </span>dev
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Your<span class="w"> </span>branch<span class="w"> </span>and<span class="w"> </span><span class="s1">&#39;origin/dev&#39;</span><span class="w"> </span>have<span class="w"> </span>diverged,
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>and<span class="w"> </span>have<span class="w"> </span><span class="m">1</span><span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>different<span class="w"> </span>commits<span class="w"> </span>each,<span class="w"> </span>respectively.
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git pull&quot;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>integrate<span class="w"> </span>the<span class="w"> </span>remote<span class="w"> </span>branch<span class="w"> </span>with<span class="w"> </span>yours<span class="o">)</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>You<span class="w"> </span>have<span class="w"> </span>unmerged<span class="w"> </span>paths.
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="o">(</span>fix<span class="w"> </span>conflicts<span class="w"> </span>and<span class="w"> </span>run<span class="w"> </span><span class="s2">&quot;git commit&quot;</span><span class="o">)</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git merge --abort&quot;</span><span class="w"> </span>to<span class="w"> </span>abort<span class="w"> </span>the<span class="w"> </span>merge<span class="o">)</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>Unmerged<span class="w"> </span>paths:
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>mark<span class="w"> </span>resolution<span class="o">)</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>both<span class="w"> </span>modified:<span class="w">   </span>.env
+</span></code></pre></div>
+<h3 id="to-fix_2">To Fix:</h3>
+<ol>
+<li>
+<p>Retrieve the latest changes from the remote repository without merging them into your current branch:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin
+</span></code></pre></div></p>
+<ul>
+<li>This will retrieve the latest changes but won’t automatically merge them into your current branch.</li>
+</ul>
+</li>
+<li>
+<p>Merge the latest changes from the remote <code>dev</code> branch into your local branch:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>merge<span class="w"> </span>origin<span class="w"> </span>dev
+</span></code></pre></div></p>
+<ul>
+<li>This will merge the latest changes from the <code>dev</code> branch into your local branch.</li>
+</ul>
+</li>
+</ol>
+<p>This process will show you the file that has a merge conflict.</p>
+<h3 id="to-resolve-the-merge-conflict">To Resolve the Merge Conflict:</h3>
+<ol>
+<li>
+<p>Open the <code>.env</code> file:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>vi<span class="w"> </span>.env
+</span></code></pre></div>
+   This will show the data that needs to be changed/corrected:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt;<span class="w"> </span>HEAD
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nv">COLOR</span><span class="o">=</span><span class="nv">White</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="o">=======</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nv">COLOR</span><span class="o">=</span>Yellow
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<span class="w"> </span>origin/dev
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Save the changes and add the file to the staging area:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git<span class="w"> </span>add<span class="w"> </span>.env
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Commit the changes:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Resolved merge conflict for .env file&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Push to the dev repository:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>dev
+</span></code></pre></div></p>
+</li>
+</ol>
+<h3 id="to-merge-changes-from-dev-to-main">To Merge Changes from Dev to Main:</h3>
+<ol>
+<li><strong>Create a Pull Request</strong> from <code>dev</code> to <code>main</code>.</li>
+<li>
+<p>Specify the description of the change: <strong>"Change Background color to Yellow"</strong>.</p>
+</li>
+<li>
+<p><strong>Add a reviewer</strong> to check your pull request, then wait for approval.</p>
+</li>
+<li>
+<p>Once approved and merged:</p>
+</li>
+<li>With the updated <code>main</code> branch in GitHub, TeamCity will now rebuild and deploy the new web application with the specified background color.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/robequijano-opswerks/rhal_documentation.git"  target="_blank" rel="noopener">Team RHAL</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
